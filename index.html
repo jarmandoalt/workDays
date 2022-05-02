@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dias de Trabajo</title>
+    <link rel="stylesheet" href="css.css"></link>
+     </head>
+
+<body class="root" id="root">
+    <h1 class="title">¿Que dias trabajaras?</h1>
+
+    <form class="every">
+        <label id="in" for="inicio">Fecha de Inicio de Turno</label>
+        <input type="date" name="inicio" id="inicio" size="10" maxlength="10" required>
+        <label for="turno">Elija el día que comenzó el turno</label>
+        <select id="turno" name= "turno" required>
+            <option value="">Seleccione...
+            <option value="1">Mañana
+            <option value="2">Noche
+            <option value="3">Mixto
+        </select>
+        <label id="fi" for="final" >Fecha que te gustaría saber si trabajas o no</label>
+        <input type="date" name="final" id="final" size="10" maxlength="10" required>
+    <input type="submit" id="ok" name="btn" value="Listo">
+    </form>
+    <h1 class="version">version 1.1.0 Armando Altamira
+    </h1>
+
+    <h1 id="aux"></h1>
+    <h1 id="aux1"></h1>
+
+    
+
+</body>
+<script src="./app.js" type="module"></script>
+</html>
