@@ -8,7 +8,6 @@ export function asigdia1(aux1,dia_inicio,mes_inicio) {
     }
     else {
         let aux3 = asigmes(dia_inicio,mes_inicio);
-        console.log("aux3",aux3);
         if (aux3 >= 60){
             let aux6 = aux3 - 1;
             return aux6;
@@ -395,7 +394,7 @@ function mayo (dia){
         break;
         case 30: return 151;
         break;
-        case 31: valor = 152;
+        case 31: return 152;
         break;
     }
 }

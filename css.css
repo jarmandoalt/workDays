@@ -6,56 +6,76 @@
 .title {
     font-family:monospace;
     color: rgb(18, 60, 136);
-    width: 80%;
-    font-size: 6vw;
+    width: 40vw;
+    font-size: 3vw;
     margin: 1rem auto;
     display: block;
     text-align: center;
     border-radius: 3px;
 }
 
+.every {
+    height: 40vh;
+}
+
 .every > *{
-    padding: 0.5rem;
-    margin: 1rem auto;
+    padding: 5px;
+    margin: 10px auto;
     display: block;
-    width: 50%;
+    width: 60vw;
 }
 
 .every > label {
     color: cadetblue;
     font-family: monospace;
-    font-size: 3vw;
+    font-size: 1.5vw;
     text-align: center;
 }
 
 .every > input {
     color: cadetblue;
     font-family: monospace;
-    font-size: 3vw;
+    font-size: 1.5vw;
     border: 1px cadetblue;
+    text-align: center;
+    width: 60vw;
+    border-radius: 5px;
+}
+
+.every > input:hover {
+    cursor: text;
 }
 
 .every > select {
     color: cadetblue;
     font-family:  monospace;
-    font-size: 3vw;
+    font-size: 1.5vw;
     border: 1px cadetblue;
+    text-align: center;
+    width: 60vw;
+    border-radius: 5px;
+}
+
+.every > select:hover {
+    cursor: pointer;
 }
 
 #ok{
     text-decoration: none;
     padding: 10px;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 1.5cwpx;
     color: #ffffff;
     background-color: #7bb3cf;
     border-radius: 6px;
     border: 1px cadetblue;
+    width: 20vw;
 }
 
 #ok:hover{
     color: #18323f;
     background-color: cadetblue;
+    cursor: pointer;
 }
 
 .turno{
@@ -95,13 +115,12 @@
     z-index: 25;
 }
 
-.version{
+#version{
     position: absolute;
     color: #18323f;
-    font-size: 10px;
+    font-size: 1.2vw;
     width: 100%;
     text-align: center;
-    /*margin-top: 35%;*/
     bottom: 0;
     z-index: 20;
 }
