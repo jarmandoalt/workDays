@@ -3,6 +3,330 @@
   height: 100%;
 }
 
+@media screen and (min-width: 200px) and (max-width: 400px) {
+  .title {
+    position: absolute;
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: rgb(84, 105, 131);
+    width: 100vw;
+    font-size: 6vw;
+    top: 10vh;
+    text-align: center;
+    border-radius: 3px;
+  }
+  
+  .every {
+    position: absolute;
+    top: 17vh;
+    left: 20vw;
+    height: 30vh;
+  }
+  
+  .every > * {
+    padding: 2px;
+    margin: 20px auto;
+    display: block;
+    width: 70vw;
+  }
+  
+  .every > label {
+    color: rgb(37, 52, 70);
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 4vw;
+    text-align: center;
+    background-color: rgb(251, 251, 251);
+    width: 60vw;
+    border-radius: 15px;
+  }
+  
+  .every > input {
+    color: rgb(37, 52, 70);
+    font-family: monospace;
+    font-size: 4vw;
+    border: 1px rgb(37, 52, 70);
+    text-align: center;
+    width: 60vw;
+    border-radius: 5px;
+    background-color: rgb(236, 236, 236);
+  }
+  
+  .every > input:hover {
+    cursor: text;
+  }
+  
+  .every > select {
+    color: cadetblue;
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 4vw;
+    border: 1px cadetblue;
+    text-align: center;
+    width: 60vw;
+    border-radius: 5px;
+  }
+  
+  .every > select:hover {
+    cursor: pointer;
+  }
+  
+  #ok {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 3vw;
+    color: #ffffff;
+    background-color: #7bb3cf;
+    border-radius: 6px;
+    border: 1px cadetblue;
+    width: 20vw;
+    height: 5vh;
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  #ok:hover {
+    color: #18323f;
+    background-color: cadetblue;
+    cursor: pointer;
+  }
+  
+  /***********  inf ************/
+  .inf{
+    position: fixed;
+    z-index: 998;
+    background-color: rgba(37, 52, 70, .95);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: transform .3s ease, opacity .5s ease;
+    transform: translate(0 , -100%);
+  }
+  
+  .inf.is-active {
+    transform: translate(0 , 0);
+    opacity: 1;
+  }
+  
+  .cerrar_pestaña {
+    position: absolute;
+    z-index: 999;
+    cursor: pointer;
+    background-color: aliceblue;
+    width: 10vw;
+    height: 10vw;
+    bottom: 3vh;
+    right: 2vw;
+    border-radius: 20%;
+    border-style: none;
+  }
+  
+  .cerrar_pestaña:hover{
+    color: white;
+    background-color: black;
+  }
+  
+  .turno_select {
+    position: absolute;
+    font-size: 3vw;
+    top: 12vh;
+    width: 70vw;
+    left: 15vw;
+    text-align: center;
+    color: aliceblue;
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  .error {
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  .mensaje {
+    font-size: 3vw;
+    position: absolute;
+    top: 7vh;
+    width: 70vw;
+    left: 15vw;
+    text-align: center;
+    color: aliceblue;
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  #version {
+    position: absolute;
+    color: rgb(43, 42, 42);
+    font-size: 1.2vw;
+    width: 100vw;
+    text-align: center;
+    bottom: 0;
+    z-index: 1000;
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  .calendar {
+    position: absolute;
+    background: rgb(236, 236, 236);
+    width: 90vw;
+    margin: 1em auto;
+    padding: 0.5em 0;
+    top: 30vh;
+    left: 5vw;
+    border-radius: 15px;
+  }
+  
+  .calendar__info {
+    display: flex;
+    align-items: center;
+    padding: 0 2em;
+    font-size: .8em;
+    text-transform: uppercase;
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  .calendar__prev,
+  .calendar__next {
+    color: grey;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  
+  .calendar__prev {
+    margin-right: auto;
+  }
+  .calendar__next {
+    margin-left: auto;
+  }
+  
+  .calendar__week,
+  .calendar__dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 15px;
+    color: black;
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  .calendar__month,
+  .calendar__year {
+    padding: 0.5em 1.2em;
+  }
+  
+  .calendar__item {
+    text-align: center;
+    line-height: 2;
+    font-size: 2.2vw;
+  }
+  
+  .calendar__manana {
+    background: rgb(175, 94, 207);
+    color: white;
+    width: 50%;
+    border-radius: 30%;
+    margin: auto;
+  }
+  
+  .calendar__select_manana {
+    background: rgb(175, 94, 207);
+    color: white;
+    width: 50%;
+    border-radius: 10%;
+    border-style: solid;
+    border-width: 4px;
+    border-color: #7bb3cf;
+    margin: auto;
+  }
+  
+  .calendar__noche {
+    background: rgb(31, 160, 84);
+    color: white;
+    width: 50%;
+    border-radius: 30%;;
+    margin: auto;
+  }
+  
+  .calendar__select_noche {
+    background: rgb(31, 160, 84);
+    color: white;
+    width: 50%;
+    border-radius: 10%;
+    border-style: solid;
+    border-width: 4px;
+    border-color: #7bb3cf;
+    margin: auto;
+  }
+  
+  .calendar__mixto{
+    background: rgb(199, 110, 32);
+    color: white;
+    width: 50%;
+    border-radius: 30%;
+    margin: auto;
+  }
+  
+  .calendar__select_mixto {
+    background: rgb(199, 110, 32);
+    color: white;
+    width: 40%;
+    border-radius: 10%;
+    border-style: solid;
+    border-width: 4px;
+    border-color: #7bb3cf;
+    margin: auto;
+  }
+  
+  .calendar__select {
+    background: black;
+    color: white;
+    width: 50%;
+    border-radius: 10%;
+    margin: auto;
+  }
+  
+  .calendar__last-days {
+    opacity: 0.3;
+  }
+  
+  .inf_turnos {
+    position: absolute;
+    top: 63vh;
+    display: flex;
+    width: 90vw;
+    left: 8.5vw;
+  }
+  
+  .inf_turnos > div {
+    display: flex;
+  }
+  
+  .inf_turnos > div > h1 {
+    font-size: 2.5vw;
+    color: aliceblue;
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  .circle {
+    width: 20px;
+    height: 20px;
+    background-color: #c7f464;
+    border-radius: 50%;
+    margin-left: 1vw;
+    margin-right: 6vw;
+  }
+  
+  .circle_manana{
+    background-color: rgb(175, 94, 207);
+  }
+  
+  .circle_noche{
+    background-color: rgb(31, 160, 84);
+  }
+  
+  .circle_mixto{
+    background-color: rgb(199, 110, 32);
+  }
+}
+
+@media screen and (min-width: 401px) {
 .title {
   position: absolute;
   font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -320,4 +644,6 @@
 
 .circle_mixto{
   background-color: rgb(199, 110, 32);
+}
+
 }
