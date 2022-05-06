@@ -25,27 +25,45 @@
     <input type="submit" id="ok" name="btn" value="Listo">
     </form>
 
-    <h1 id="aux"></h1>
-
-    <div class="calendar">
-        <div class="calendar__info">
-            <div class="calendar__prev" id="prev-month">&#9664;</div>
-            <div class="calendar__month" id="month"></div>
-            <div class="calendar__year" id="year"></div>
-            <div class="calendar__next" id="next-month">&#9654;</div>
-        </div>
+    <div id="inf" class="inf">
+        <button class="cerrar_pestaña" id="cerrar_pestaña" > &#10006; </button>
+        <div id="turno_select"></div>
+        <div id="aux"></div>
     
-        <div class="calendar__week">
-            <div class="calendar__day calendar__item">Lunes</div>
-            <div class="calendar__day calendar__item">Martes</div>
-            <div class="calendar__day calendar__item">Miercoles</div>
-            <div class="calendar__day calendar__item">Jueves</div>
-            <div class="calendar__day calendar__item">Viernes</div>
-            <div class="calendar__day calendar__item">Sabado</div>
-            <div class="calendar__day calendar__item">Domingo</div>
+        <div class="calendar">
+            <div class="calendar__info">
+                <div class="calendar__prev" id="prev-month">&#9664;</div>
+                <div class="calendar__month" id="month"></div>
+                <div class="calendar__year" id="year"></div>
+                <div class="calendar__next" id="next-month">&#9654;</div>
+            </div>
+        
+            <div class="calendar__week">
+                <div class="calendar__day calendar__item">Lunes</div>
+                <div class="calendar__day calendar__item">Martes</div>
+                <div class="calendar__day calendar__item">Miercoles</div>
+                <div class="calendar__day calendar__item">Jueves</div>
+                <div class="calendar__day calendar__item">Viernes</div>
+                <div class="calendar__day calendar__item">Sabado</div>
+                <div class="calendar__day calendar__item">Domingo</div>
+            </div>
+        
+            <div class="calendar__dates" id="dates"></div>
         </div>
-    
-        <div class="calendar__dates" id="dates"></div>
+        <div class="inf_turnos">
+            <div>
+                <h1>Turno Mañana</h1>
+                <div class="circle circle_manana"></div>
+            </div>
+            <div>
+                <h1>Turno Noche</h1>
+                <div class="circle circle_noche"></div>
+            </div>
+            <div>
+                <h1>Turno Mixto</h1>
+                <div class="circle circle_mixto"></div>
+            </div>
+        </div>
     </div>
     
 

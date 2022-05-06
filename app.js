@@ -1,11 +1,20 @@
 import { asigdia1, asigdia2 } from "./asigdia.js";
-import { si, no, mismodia, diaanterior, mas1 } from "./errores.js";
+import { si, no, mismoDia, diaAnterior, mas1ano } from "./errores.js";
+
+const $root = document.getElementById("root"),
+    $btnInf = document.getElementById('inf'),
+    $btnClose = document.getElementById('cerrar_pestaña')
 
 document.addEventListener("submit", (e) => {
   e.preventDefault();
-  const $root = document.getElementById("root")
   tomadatos();
+  $btnInf.classList.add('is-active')
 });
+
+$btnClose.addEventListener('click', (e) => {
+  location.reload();
+  $btnInf.classList.remove('is-active')
+} )
 
 export function tomadatos() {
   let x = document.getElementById("inicio").value,
@@ -55,341 +64,291 @@ function hello(
   dia_inicio,
   no_turno
 ) {
-  let mes,
-    dia,
-    otro = 1,
-    $root = document.getElementById("root");
-
-  //mensajes
-  function trabajas() {
-    setTimeout(function () {
-      $root.appendChild(si());
-    }, 400);
-  }
-
-  function no_trabajas() {
-    setTimeout(function () {
-      $root.appendChild(no());
-    }, 400);
-  }
-
-  function mismodi() {
-    setTimeout(function () {
-      $root.appendChild(mismodia());
-    }, 400);
-  }
-
-  function diaanterio() {
-    setTimeout(function () {
-      $root.appendChild(diaanterior());
-    }, 400);
-  }
-
-  function mas() {
-    setTimeout(function () {
-      $root.appendChild(mas1());
-    }, 400);
-  }
+  let $root = document.getElementById("root");
 
   function manana(otro) {
     console.log("turno manana");
-    const $h1 = document.createElement("h1");
+    const $h1 = document.getElementById("turno_select");
 
     $h1.innerHTML = "<h1> Estarás en el Turno Mañana </h1>";
-    $h1.classList.add("turno");
-
-    setTimeout(function () {
-      $root.appendChild($h1);
-    }, 400);
+    $h1.classList.add("turno_select");
 
     switch (otro) {
       case 0:
-        trabajas();
+        si();
         break;
       case 1:
-        trabajas();
+        si();
         break;
       case 2:
-        trabajas();
+        si();
         break;
       case 3:
-        trabajas();
+        si();
         break;
       case 4:
-        no_trabajas();
+        no();
         break;
       case 5:
-        no_trabajas();
+        no();
         break;
       case 6:
-        no_trabajas();
+        no();
         break;
       case 7:
-        trabajas();
+        si();
         break;
       case 8:
-        trabajas();
+        si();
         break;
       case 9:
-        trabajas();
+        si();
         break;
       case 10:
-        trabajas();
+        si();
         break;
       case 11:
-        no_trabajas();
+        no();
         break;
       case 12:
-        no_trabajas();
+        no();
         break;
       case 13:
-        no_trabajas();
+        no();
         break;
       case 14:
-        trabajas();
+        si();
         break;
       case 15:
-        trabajas();
+        si();
         break;
       case 16:
-        trabajas();
+        si();
         break;
       case 17:
-        trabajas();
+        si();
         break;
       case 18:
-        no_trabajas();
+        no();
         break;
       case 19:
-        no_trabajas();
+        no();
         break;
       case 20:
-        no_trabajas();
+        no();
         break;
       case 21:
-        trabajas();
+        si();
         break;
       case 22:
-        trabajas();
+        si();
         break;
       case 23:
-        trabajas();
+        si();
         break;
       case 24:
-        trabajas();
+        si();
         break;
       case 25:
-        no_trabajas();
+        no();
         break;
       case 26:
-        no_trabajas();
+        no();
         break;
       case 27:
-        no_trabajas();
+        no();
         break;
     }
   }
 
   function noche(otro) {
-    console.log("turno noche");
-    const $h1 = document.createElement("h1");
+    const $h1 = document.getElementById("turno_select");
 
     $h1.innerHTML = "<h1> Estarás en el Turno Noche </h1>";
-    $h1.classList.add("turno");
-
-    setTimeout(function () {
-      $root.appendChild($h1);
-    }, 400);
+    $h1.classList.add("turno_select");
 
     switch (otro) {
       case 0:
-        no_trabajas();
+        no();
         break;
       case 1:
-        no_trabajas();
+        no();
         break;
       case 2:
-        trabajas();
+        si();
         break;
       case 3:
-        trabajas();
+        si();
         break;
       case 4:
-        trabajas();
+        si();
         break;
       case 5:
-        trabajas();
+        si();
         break;
       case 6:
-        no_trabajas();
+        no();
         break;
       case 7:
-        no_trabajas();
+        no();
         break;
       case 8:
-        no_trabajas();
+        no();
         break;
       case 9:
-        trabajas();
+        si();
         break;
       case 10:
-        trabajas();
+        si();
         break;
       case 11:
-        trabajas();
+        si();
         break;
       case 12:
-        trabajas();
+        si();
         break;
       case 13:
-        no_trabajas();
+        no();
         break;
       case 14:
-        no_trabajas();
+        no();
         break;
       case 15:
-        no_trabajas();
+        no();
         break;
       case 16:
-        trabajas();
+        si();
         break;
       case 17:
-        trabajas();
+        si();
         break;
       case 18:
-        trabajas();
+        si();
         break;
       case 19:
-        trabajas();
+        si();
         break;
       case 20:
-        no_trabajas();
+        no();
         break;
       case 21:
-        no_trabajas();
+        no();
         break;
       case 22:
-        no_trabajas();
+        no();
         break;
       case 23:
-        trabajas();
+        si();
         break;
       case 24:
-        trabajas();
+        si();
         break;
       case 25:
-        trabajas();
+        si();
         break;
       case 26:
-        trabajas();
+        si();
         break;
       case 27:
-        no_trabajas();
+        no();
         break;
     }
   }
 
   function mixto(otro) {
-    console.log("turno mixto");
 
-    const $h1 = document.createElement("h1");
+    const $h1 = document.getElementById("turno_select");
+    $h1.classList.add("turno_select");
 
     $h1.innerHTML = "<h1> Estarás en el Turno Mixto</h1>";
-    $h1.classList.add("turno");
-
-    setTimeout(function () {
-      $root.appendChild($h1);
-    }, 400);
 
     switch (otro) {
       case 0:
-        trabajas();
+        si();
         break;
       case 1:
-        trabajas();
+        si();
         break;
       case 2:
-        no_trabajas();
+        no();
         break;
       case 3:
-        no_trabajas();
+        no();
         break;
       case 4:
-        trabajas();
+        si();
         break;
       case 5:
-        trabajas();
+        si();
         break;
       case 6:
-        no_trabajas();
+        no();
         break;
       case 7:
-        trabajas();
+        si();
         break;
       case 8:
-        trabajas();
+        si();
         break;
       case 9:
-        no_trabajas();
+        no();
         break;
       case 10:
-        no_trabajas();
+        no();
         break;
       case 11:
-        trabajas();
+        si();
         break;
       case 12:
-        trabajas();
+        si();
         break;
       case 13:
-        no_trabajas();
+        no();
         break;
       case 14:
-        trabajas();
+        si();
         break;
       case 15:
-        trabajas();
+        si();
         break;
       case 16:
-        no_trabajas();
+        no();
         break;
       case 17:
-        no_trabajas();
+        no();
         break;
       case 18:
-        trabajas();
+        si();
         break;
       case 19:
-        trabajas();
+        si();
         break;
       case 20:
-        no_trabajas();
+        no();
         break;
       case 21:
-        trabajas();
+        si();
         break;
       case 22:
-        trabajas();
+        si();
         break;
       case 23:
-        no_trabajas();
+        no();
         break;
       case 24:
-        no_trabajas();
+        no();
         break;
       case 25:
-        trabajas();
+        si();
         break;
       case 26:
-        trabajas();
+        si();
         break;
       case 27:
-        no_trabajas();
+        no();
         break;
     }
   }
-
-  let value2, value3;
 
   function first(value2) {
     if (no_turno == 1) {
@@ -451,8 +410,14 @@ function hello(
     numero1 = numero1 - 2;
   }
 
-  let resta = numero2 - numero1,
-    mesesDiferencia = Math.floor(resta / 28), //es para saber el numero de meses que pasaron
+  let resta = numero2 - numero1;
+
+  if (ano_final > ano_inicio) {
+    let aux = 365 - numero1;
+    resta = aux + numero2;
+  }
+
+  let mesesDiferencia = Math.floor(resta / 28), //es para saber el numero de meses que pasaron
     numeroDiasSobrantes = resta % 28, //el numero de dias que sobraron despues de los meses
     turnoNuevo = mesesDiferencia % 3, //cuantos turnos de diferencia hay entre mes y mes
     auxMes = mesesDiferencia + 1, //para que en el for tenga un mes mas de recorrido
@@ -462,6 +427,15 @@ function hello(
     diasDeTrabajoNoche = [], // arreglo donde se guardaran el numero de los dias que trabajaras turno Noche
     diasDeTrabajoMixto = [], // arreglo donde se guardaran el numero de los dias que trabajaras turno Mixto
     arrayTurnoMañana = [
+      turnoManana,
+      turnoNoche,
+      turnoMixto,
+      turnoManana,
+      turnoNoche,
+      turnoMixto,
+      turnoManana,
+      turnoNoche,
+      turnoMixto,
       turnoManana,
       turnoNoche,
       turnoMixto,
@@ -493,6 +467,15 @@ function hello(
       turnoManana,
       turnoNoche,
       turnoMixto,
+      turnoManana,
+      turnoNoche,
+      turnoMixto,
+      turnoManana,
+      turnoNoche,
+      turnoMixto,
+      turnoManana,
+      turnoNoche,
+      turnoMixto,
     ],
     arrayTurnoMixto = [
       turnoMixto,
@@ -508,7 +491,17 @@ function hello(
       turnoManana,
       turnoNoche,
       turnoMixto,
+      turnoManana,
+      turnoNoche,
+      turnoMixto,
+      turnoManana,
+      turnoNoche,
+      turnoMixto,
+      turnoManana,
+      turnoNoche,
+      turnoMixto,
     ];
+
   console.log(
     "numero1= " + numero1,
     "numero2= " + numero2,
@@ -518,160 +511,172 @@ function hello(
   );
 
   function turnoManana(numeroDeDia, diaDelMesAux) {
+    let auxAnoDiferente = numero1 + numeroDeDia + diaDelMesAux;
+    if (numero1 + numeroDeDia + diaDelMesAux > 365) {
+      auxAnoDiferente = auxAnoDiferente - 365;
+    }
     switch (numeroDeDia) {
       case 0:
-        diasDeTrabajoManana.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoManana.push(auxAnoDiferente);
         break;
       case 1:
-        diasDeTrabajoManana.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoManana.push(auxAnoDiferente);
         break;
       case 2:
-        diasDeTrabajoManana.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoManana.push(auxAnoDiferente);
         break;
       case 3:
-        diasDeTrabajoManana.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoManana.push(auxAnoDiferente);
         break;
       case 7:
-        diasDeTrabajoManana.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoManana.push(auxAnoDiferente);
         break;
       case 8:
-        diasDeTrabajoManana.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoManana.push(auxAnoDiferente);
         break;
       case 9:
-        diasDeTrabajoManana.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoManana.push(auxAnoDiferente);
         break;
       case 10:
-        diasDeTrabajoManana.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoManana.push(auxAnoDiferente);
         break;
       case 14:
-        diasDeTrabajoManana.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoManana.push(auxAnoDiferente);
         break;
       case 15:
-        diasDeTrabajoManana.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoManana.push(auxAnoDiferente);
         break;
       case 16:
-        diasDeTrabajoManana.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoManana.push(auxAnoDiferente);
         break;
       case 17:
-        diasDeTrabajoManana.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoManana.push(auxAnoDiferente);
         break;
       case 21:
-        diasDeTrabajoManana.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoManana.push(auxAnoDiferente);
         break;
       case 22:
-        diasDeTrabajoManana.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoManana.push(auxAnoDiferente);
         break;
       case 23:
-        diasDeTrabajoManana.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoManana.push(auxAnoDiferente);
         break;
       case 24:
-        diasDeTrabajoManana.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoManana.push(auxAnoDiferente);
         break;
     }
   }
 
   function turnoNoche(numeroDeDia, diaDelMesAux) {
+    let auxAnoDiferente = numero1 + numeroDeDia + diaDelMesAux;
+    if ((numero1 + numeroDeDia + diaDelMesAux) > 365) {
+      auxAnoDiferente = auxAnoDiferente - 365;
+    }
     switch (numeroDeDia) {
       case 2:
-        diasDeTrabajoNoche.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoNoche.push(auxAnoDiferente);
         break;
       case 3:
-        diasDeTrabajoNoche.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoNoche.push(auxAnoDiferente);
         break;
       case 4:
-        diasDeTrabajoNoche.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoNoche.push(auxAnoDiferente);
         break;
       case 5:
-        diasDeTrabajoNoche.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoNoche.push(auxAnoDiferente);
         break;
       case 9:
-        diasDeTrabajoNoche.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoNoche.push(auxAnoDiferente);
         break;
       case 10:
-        diasDeTrabajoNoche.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoNoche.push(auxAnoDiferente);
         break;
       case 11:
-        diasDeTrabajoNoche.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoNoche.push(auxAnoDiferente);
         break;
       case 12:
-        diasDeTrabajoNoche.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoNoche.push(auxAnoDiferente);
         break;
       case 16:
-        diasDeTrabajoNoche.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoNoche.push(auxAnoDiferente);
         break;
       case 17:
-        diasDeTrabajoNoche.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoNoche.push(auxAnoDiferente);
         break;
       case 18:
-        diasDeTrabajoNoche.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoNoche.push(auxAnoDiferente);
         break;
       case 19:
-        diasDeTrabajoNoche.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoNoche.push(auxAnoDiferente);
         break;
       case 23:
-        diasDeTrabajoNoche.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoNoche.push(auxAnoDiferente);
         break;
       case 24:
-        diasDeTrabajoNoche.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoNoche.push(auxAnoDiferente);
         break;
       case 25:
-        diasDeTrabajoNoche.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoNoche.push(auxAnoDiferente);
         break;
       case 26:
-        diasDeTrabajoNoche.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoNoche.push(auxAnoDiferente);
         break;
     }
   }
 
   function turnoMixto(numeroDeDia, diaDelMesAux) {
+    let auxAnoDiferente = numero1 + numeroDeDia + diaDelMesAux;
+    if ((numero1 + numeroDeDia + diaDelMesAux) > 365) {
+      auxAnoDiferente = auxAnoDiferente - 365;
+    }
     switch (numeroDeDia) {
       case 0:
-        diasDeTrabajoMixto.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoMixto.push(auxAnoDiferente);
         break;
       case 1:
-        diasDeTrabajoMixto.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoMixto.push(auxAnoDiferente);
         break;
       case 4:
-        diasDeTrabajoMixto.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoMixto.push(auxAnoDiferente);
         break;
       case 5:
-        diasDeTrabajoMixto.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoMixto.push(auxAnoDiferente);
         break;
       case 7:
-        diasDeTrabajoMixto.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoMixto.push(auxAnoDiferente);
         break;
       case 8:
-        diasDeTrabajoMixto.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoMixto.push(auxAnoDiferente);
         break;
       case 11:
-        diasDeTrabajoMixto.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoMixto.push(auxAnoDiferente);
         break;
       case 12:
-        diasDeTrabajoMixto.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoMixto.push(auxAnoDiferente);
         break;
       case 14:
-        diasDeTrabajoMixto.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoMixto.push(auxAnoDiferente);
         break;
       case 15:
-        diasDeTrabajoMixto.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoMixto.push(auxAnoDiferente);
         break;
       case 18:
-        diasDeTrabajoMixto.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoMixto.push(auxAnoDiferente);
         break;
       case 19:
-        diasDeTrabajoMixto.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoMixto.push(auxAnoDiferente);
         break;
       case 21:
-        diasDeTrabajoMixto.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoMixto.push(auxAnoDiferente);
         break;
       case 22:
-        diasDeTrabajoMixto.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoMixto.push(auxAnoDiferente);
         break;
       case 25:
-        diasDeTrabajoMixto.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoMixto.push(auxAnoDiferente);
         break;
       case 26:
-        diasDeTrabajoMixto.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoMixto.push(auxAnoDiferente);
         break;
     }
   }
@@ -701,7 +706,7 @@ function hello(
     if (resta < 28) {
       //Para cuando es menos de un mes
       for (let numeroDeDias = 0; numeroDeDias < resta; numeroDeDias++) {
-        turnoNoche(numeroDeDias);
+        turnoNoche(numeroDeDias, aux0);
       }
     } else {
       for (let index = 0; index < auxMes; index++) {
@@ -722,7 +727,7 @@ function hello(
     if (resta < 28) {
       //Para cuando es menos de un mes
       for (let numeroDeDias = 0; numeroDeDias < resta; numeroDeDias++) {
-        turnoMixto(numeroDeDias);
+        turnoMixto(numeroDeDias, aux0);
       }
     } else {
       for (let index = 0; index < auxMes; index++) {
@@ -746,17 +751,17 @@ function hello(
   );
 
   if (ano_final < ano_inicio) {
-    diaanterio();
+    diaAnterior();
   } else {
     if (ano_inicio == ano_final) {
       //el mismo año
       if (numero1 > numero2) {
         //el mismo año dia atrasado
-        diaanterio();
+        diaAnterior();
       } else {
         if (numero1 == numero2) {
           //el mismo año el mismo dia
-          mismodi();
+          mismoDia();
         } else {
           //el mismmo año antes de un mes
           //console.log("resta de los dias",resta);
@@ -792,7 +797,7 @@ function hello(
       let auxano = ano_final - ano_inicio;
 
       if (auxano >= 2) {
-        mas();
+        mas1ano();
       } else {
         let auxidiaresta = 365 - numero1, //saber cuantos dias faltaban para completar el mes
           sumadias = auxidiaresta + numero2; //para saber el numero de dias entre dia1 y dia2
@@ -809,9 +814,9 @@ function hello(
           }
         } else {
           //mas de un mes
-          let auxNumeroNes = Math.floor(sumadias / 28), //numero de dias
+          let auxNumeroMes = Math.floor(sumadias / 28), //numero de dias
             auxNumeroDia = sumadias % 28, //el numero de dias que sobraron despues de los meses
-            turno = auxnumeromes % 3; //cuantos turnos de diferencia hay entre mes y mes
+            turno = auxNumeroMes % 3; //cuantos turnos de diferencia hay entre mes y mes
 
           if (auxNumeroMes == 1) {
             first(auxNumeroDia);
@@ -870,34 +875,34 @@ function hello(
         auxNumber = 32;
         break;
       case 2:
-        auxNumber = 60;
+        isLeap() ? (auxNumber = 61) : (auxNumber = 60);
         break;
       case 3:
-        auxNumber = 91;
+        isLeap() ? (auxNumber = 92) : (auxNumber = 91);
         break;
       case 4:
-        auxNumber = 121;
+        isLeap() ? (auxNumber = 122) : (auxNumber = 121);
         break;
       case 5:
-        auxNumber = 152;
+        isLeap() ? (auxNumber = 153) : (auxNumber = 152);
         break;
       case 6:
-        auxNumber = 182;
+        isLeap() ? (auxNumber = 183) : (auxNumber = 182);
         break;
       case 7:
-        auxNumber = 213;
+        isLeap() ? (auxNumber = 214) : (auxNumber = 213);
         break;
       case 8:
-        auxNumber = 244;
+        isLeap() ? (auxNumber = 245) : (auxNumber = 244);
         break;
       case 9:
-        auxNumber = 274;
+        isLeap() ? (auxNumber = 275) : (auxNumber = 274);
         break;
       case 10:
-        auxNumber = 305;
+        isLeap() ? (auxNumber = 306) : (auxNumber = 305);
         break;
       case 11:
-        auxNumber = 365;
+        isLeap() ? (auxNumber = 334) : (auxNumber = 335);
         break;
       default:
         break;
@@ -913,15 +918,31 @@ function hello(
       let auxContador = auxNumber++;
 
       if (diasDeTrabajoManana.includes(auxContador)) {
-        dates.innerHTML += ` <div class="calendar__date calendar__item calendar__manana">${i}</div>`;
+        if (auxContador == numero2) {
+          dates.innerHTML += ` <div class="calendar__date calendar__item calendar__select_manana">${i}</div>`;
+        } else {
+          dates.innerHTML += ` <div class="calendar__date calendar__item calendar__manana">${i}</div>`;
+        }
       } else {
         if (diasDeTrabajoNoche.includes(auxContador)) {
-          dates.innerHTML += ` <div class="calendar__date calendar__item calendar__noche">${i}</div>`;
+          if (auxContador == numero2) {
+            dates.innerHTML += ` <div class="calendar__date calendar__item calendar__select_noche">${i}</div>`;
+          } else {
+            dates.innerHTML += ` <div class="calendar__date calendar__item calendar__noche">${i}</div>`;
+          }
         } else {
           if (diasDeTrabajoMixto.includes(auxContador)) {
-            dates.innerHTML += ` <div class="calendar__date calendar__item calendar__mixto">${i}</div>`;
+            if (auxContador == numero2) {
+              dates.innerHTML += ` <div class="calendar__date calendar__item calendar__select_mixto">${i}</div>`;
+            } else {
+              dates.innerHTML += ` <div class="calendar__date calendar__item calendar__mixto">${i}</div>`;
+            }
           } else {
-            dates.innerHTML += ` <div class="calendar__date calendar__item">${i}</div>`;
+            if (auxContador == numero2) {
+              dates.innerHTML += ` <div class="calendar__date calendar__item calendar__select">${i}</div>`;
+            } else {
+              dates.innerHTML += ` <div class="calendar__date calendar__item">${i}</div>`;
+            }
           }
         }
       }
@@ -945,6 +966,7 @@ function hello(
       return 30;
     } else {
       return isLeap() ? 29 : 28;
+      console.log("biciesto");
     }
   };
 

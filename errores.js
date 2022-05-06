@@ -15,7 +15,7 @@ export function no() {
     return $h1;
 }
 
-export function mismodia() {
+export function mismoDia() {
     const $h1 = document.getElementById("aux");
     
     $h1.innerHTML = '<h1> Las dos fechas son iguales </h1>';
@@ -23,7 +23,7 @@ export function mismodia() {
     return $h1;
 }
 
-export function diaanterior() {
+export function diaAnterior() {
     const $h1 = document.getElementById("aux");
     
     $h1.innerHTML = '<h1> La segunda fecha es anterior a la primera </h1>';
@@ -31,7 +31,7 @@ export function diaanterior() {
     return $h1;
 }
 
-export function mas1() {
+export function mas1ano() {
     const $h1 = document.getElementById("aux");
     
     $h1.innerHTML = '<h1> No se puede usar fechas con más de 1 año de diferencia </h1>';
