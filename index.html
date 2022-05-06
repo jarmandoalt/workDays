@@ -24,13 +24,33 @@
         <input type="date" name="final" id="final" size="10" maxlength="10" required>
     <input type="submit" id="ok" name="btn" value="Listo">
     </form>
-    <h1 id="version">version 1.2.0 AAM
-    </h1>
 
     <h1 id="aux"></h1>
-    <h1 id="aux1"></h1>
 
+    <div class="calendar">
+        <div class="calendar__info">
+            <div class="calendar__prev" id="prev-month">&#9664;</div>
+            <div class="calendar__month" id="month"></div>
+            <div class="calendar__year" id="year"></div>
+            <div class="calendar__next" id="next-month">&#9654;</div>
+        </div>
     
+        <div class="calendar__week">
+            <div class="calendar__day calendar__item">Lunes</div>
+            <div class="calendar__day calendar__item">Martes</div>
+            <div class="calendar__day calendar__item">Miercoles</div>
+            <div class="calendar__day calendar__item">Jueves</div>
+            <div class="calendar__day calendar__item">Viernes</div>
+            <div class="calendar__day calendar__item">Sabado</div>
+            <div class="calendar__day calendar__item">Domingo</div>
+        </div>
+    
+        <div class="calendar__dates" id="dates"></div>
+    </div>
+    
+
+    <h1 id="version">version 1.2.0 AAM
+    </h1>
 
 </body>
 <script src="./app.js" type="module"></script>

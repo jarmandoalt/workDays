@@ -3,11 +3,7 @@ import { si, no, mismodia, diaanterior, mas1 } from "./errores.js";
 
 document.addEventListener("submit", (e) => {
   e.preventDefault();
-  const $root = document.getElementById("root"),
-    $last = $root.lastChild;
-
-  $root.removeChild($root.lastChild);
-  $root.removeChild($root.lastChild);
+  const $root = document.getElementById("root")
   tomadatos();
 });
 
@@ -459,17 +455,64 @@ function hello(
     mesesDiferencia = Math.floor(resta / 28), //es para saber el numero de meses que pasaron
     numeroDiasSobrantes = resta % 28, //el numero de dias que sobraron despues de los meses
     turnoNuevo = mesesDiferencia % 3, //cuantos turnos de diferencia hay entre mes y mes
-    auxMes = mesesDiferencia + 1, //para que en el for tenga un mes mas de recorrido 
+    auxMes = mesesDiferencia + 1, //para que en el for tenga un mes mas de recorrido
     aux28 = 28, //para sumar los dias del mes que faltan
     aux0 = 0, //para mandar un numero a las funciones y no marque NAN en la suma
-    diasDeTrabajo = [], // arreglo donde se guardaran el numero de los dias que trabajaras
-    arrayTurnoMañana = [turnoManana,turnoNoche,turnoMixto, turnoManana,turnoNoche,turnoMixto, turnoManana,turnoNoche,turnoMixto, turnoManana,turnoNoche,turnoMixto,turnoManana,turnoNoche,turnoMixto],
-    arrayTurnoNoche = [turnoNoche,turnoMixto, turnoManana,turnoNoche,turnoMixto, turnoManana,turnoNoche,turnoMixto, turnoManana,turnoNoche,turnoMixto,turnoManana,turnoNoche,turnoMixto],
-    arrayTurnoMixto = [turnoMixto, turnoManana,turnoNoche,turnoMixto, turnoManana,turnoNoche,turnoMixto, turnoManana,turnoNoche,turnoMixto,turnoManana,turnoNoche,turnoMixto]
-    console.log(
+    diasDeTrabajoManana = [], // arreglo donde se guardaran el numero de los dias que trabajaras turno Mañana
+    diasDeTrabajoNoche = [], // arreglo donde se guardaran el numero de los dias que trabajaras turno Noche
+    diasDeTrabajoMixto = [], // arreglo donde se guardaran el numero de los dias que trabajaras turno Mixto
+    arrayTurnoMañana = [
+      turnoManana,
+      turnoNoche,
+      turnoMixto,
+      turnoManana,
+      turnoNoche,
+      turnoMixto,
+      turnoManana,
+      turnoNoche,
+      turnoMixto,
+      turnoManana,
+      turnoNoche,
+      turnoMixto,
+      turnoManana,
+      turnoNoche,
+      turnoMixto,
+    ],
+    arrayTurnoNoche = [
+      turnoNoche,
+      turnoMixto,
+      turnoManana,
+      turnoNoche,
+      turnoMixto,
+      turnoManana,
+      turnoNoche,
+      turnoMixto,
+      turnoManana,
+      turnoNoche,
+      turnoMixto,
+      turnoManana,
+      turnoNoche,
+      turnoMixto,
+    ],
+    arrayTurnoMixto = [
+      turnoMixto,
+      turnoManana,
+      turnoNoche,
+      turnoMixto,
+      turnoManana,
+      turnoNoche,
+      turnoMixto,
+      turnoManana,
+      turnoNoche,
+      turnoMixto,
+      turnoManana,
+      turnoNoche,
+      turnoMixto,
+    ];
+  console.log(
     "numero1= " + numero1,
     "numero2= " + numero2,
-    'resta= ' + resta, 
+    "resta= " + resta,
     "mesDiferencia= " + mesesDiferencia,
     "numeroDias= " + numeroDiasSobrantes
   );
@@ -477,52 +520,52 @@ function hello(
   function turnoManana(numeroDeDia, diaDelMesAux) {
     switch (numeroDeDia) {
       case 0:
-        diasDeTrabajo.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoManana.push(numero1 + numeroDeDia + diaDelMesAux);
         break;
       case 1:
-        diasDeTrabajo.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoManana.push(numero1 + numeroDeDia + diaDelMesAux);
         break;
       case 2:
-        diasDeTrabajo.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoManana.push(numero1 + numeroDeDia + diaDelMesAux);
         break;
       case 3:
-        diasDeTrabajo.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoManana.push(numero1 + numeroDeDia + diaDelMesAux);
         break;
       case 7:
-        diasDeTrabajo.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoManana.push(numero1 + numeroDeDia + diaDelMesAux);
         break;
       case 8:
-        diasDeTrabajo.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoManana.push(numero1 + numeroDeDia + diaDelMesAux);
         break;
       case 9:
-        diasDeTrabajo.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoManana.push(numero1 + numeroDeDia + diaDelMesAux);
         break;
       case 10:
-        diasDeTrabajo.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoManana.push(numero1 + numeroDeDia + diaDelMesAux);
         break;
       case 14:
-        diasDeTrabajo.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoManana.push(numero1 + numeroDeDia + diaDelMesAux);
         break;
       case 15:
-        diasDeTrabajo.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoManana.push(numero1 + numeroDeDia + diaDelMesAux);
         break;
       case 16:
-        diasDeTrabajo.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoManana.push(numero1 + numeroDeDia + diaDelMesAux);
         break;
       case 17:
-        diasDeTrabajo.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoManana.push(numero1 + numeroDeDia + diaDelMesAux);
         break;
       case 21:
-        diasDeTrabajo.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoManana.push(numero1 + numeroDeDia + diaDelMesAux);
         break;
       case 22:
-        diasDeTrabajo.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoManana.push(numero1 + numeroDeDia + diaDelMesAux);
         break;
       case 23:
-        diasDeTrabajo.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoManana.push(numero1 + numeroDeDia + diaDelMesAux);
         break;
       case 24:
-        diasDeTrabajo.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoManana.push(numero1 + numeroDeDia + diaDelMesAux);
         break;
     }
   }
@@ -530,52 +573,52 @@ function hello(
   function turnoNoche(numeroDeDia, diaDelMesAux) {
     switch (numeroDeDia) {
       case 2:
-        diasDeTrabajo.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoNoche.push(numero1 + numeroDeDia + diaDelMesAux);
         break;
       case 3:
-        diasDeTrabajo.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoNoche.push(numero1 + numeroDeDia + diaDelMesAux);
         break;
       case 4:
-        diasDeTrabajo.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoNoche.push(numero1 + numeroDeDia + diaDelMesAux);
         break;
       case 5:
-        diasDeTrabajo.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoNoche.push(numero1 + numeroDeDia + diaDelMesAux);
         break;
       case 9:
-        diasDeTrabajo.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoNoche.push(numero1 + numeroDeDia + diaDelMesAux);
         break;
       case 10:
-        diasDeTrabajo.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoNoche.push(numero1 + numeroDeDia + diaDelMesAux);
         break;
       case 11:
-        diasDeTrabajo.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoNoche.push(numero1 + numeroDeDia + diaDelMesAux);
         break;
       case 12:
-        diasDeTrabajo.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoNoche.push(numero1 + numeroDeDia + diaDelMesAux);
         break;
       case 16:
-        diasDeTrabajo.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoNoche.push(numero1 + numeroDeDia + diaDelMesAux);
         break;
       case 17:
-        diasDeTrabajo.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoNoche.push(numero1 + numeroDeDia + diaDelMesAux);
         break;
       case 18:
-        diasDeTrabajo.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoNoche.push(numero1 + numeroDeDia + diaDelMesAux);
         break;
       case 19:
-        diasDeTrabajo.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoNoche.push(numero1 + numeroDeDia + diaDelMesAux);
         break;
       case 23:
-        diasDeTrabajo.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoNoche.push(numero1 + numeroDeDia + diaDelMesAux);
         break;
       case 24:
-        diasDeTrabajo.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoNoche.push(numero1 + numeroDeDia + diaDelMesAux);
         break;
       case 25:
-        diasDeTrabajo.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoNoche.push(numero1 + numeroDeDia + diaDelMesAux);
         break;
       case 26:
-        diasDeTrabajo.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoNoche.push(numero1 + numeroDeDia + diaDelMesAux);
         break;
     }
   }
@@ -583,58 +626,59 @@ function hello(
   function turnoMixto(numeroDeDia, diaDelMesAux) {
     switch (numeroDeDia) {
       case 0:
-        diasDeTrabajo.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoMixto.push(numero1 + numeroDeDia + diaDelMesAux);
         break;
       case 1:
-        diasDeTrabajo.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoMixto.push(numero1 + numeroDeDia + diaDelMesAux);
         break;
       case 4:
-        diasDeTrabajo.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoMixto.push(numero1 + numeroDeDia + diaDelMesAux);
         break;
       case 5:
-        diasDeTrabajo.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoMixto.push(numero1 + numeroDeDia + diaDelMesAux);
         break;
       case 7:
-        diasDeTrabajo.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoMixto.push(numero1 + numeroDeDia + diaDelMesAux);
         break;
       case 8:
-        diasDeTrabajo.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoMixto.push(numero1 + numeroDeDia + diaDelMesAux);
         break;
       case 11:
-        diasDeTrabajo.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoMixto.push(numero1 + numeroDeDia + diaDelMesAux);
         break;
       case 12:
-        diasDeTrabajo.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoMixto.push(numero1 + numeroDeDia + diaDelMesAux);
         break;
       case 14:
-        diasDeTrabajo.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoMixto.push(numero1 + numeroDeDia + diaDelMesAux);
         break;
       case 15:
-        diasDeTrabajo.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoMixto.push(numero1 + numeroDeDia + diaDelMesAux);
         break;
       case 18:
-        diasDeTrabajo.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoMixto.push(numero1 + numeroDeDia + diaDelMesAux);
         break;
       case 19:
-        diasDeTrabajo.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoMixto.push(numero1 + numeroDeDia + diaDelMesAux);
         break;
       case 21:
-        diasDeTrabajo.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoMixto.push(numero1 + numeroDeDia + diaDelMesAux);
         break;
       case 22:
-        diasDeTrabajo.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoMixto.push(numero1 + numeroDeDia + diaDelMesAux);
         break;
       case 25:
-        diasDeTrabajo.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoMixto.push(numero1 + numeroDeDia + diaDelMesAux);
         break;
       case 26:
-        diasDeTrabajo.push(numero1 + numeroDeDia + diaDelMesAux);
+        diasDeTrabajoMixto.push(numero1 + numeroDeDia + diaDelMesAux);
         break;
     }
   }
 
   if (no_turno == 1) {
-    if (resta < 28) { //Para cuando es menos de un mes
+    if (resta < 28) {
+      //Para cuando es menos de un mes
       for (let numeroDeDias = 0; numeroDeDias < resta; numeroDeDias++) {
         turnoManana(numeroDeDias, aux0);
       }
@@ -644,18 +688,18 @@ function hello(
           auxTurno = arrayTurnoMañana[index],
           auxforDias = 28;
         if (index == mesesDiferencia) {
-          auxforDias = numeroDiasSobrantes + 1
+          auxforDias = numeroDiasSobrantes + 1;
         }
         for (let numeroDeDias = 0; numeroDeDias < auxforDias; numeroDeDias++) {
           auxTurno(numeroDeDias, auxMesCompleto);
         }
-        
       }
     }
   }
 
   if (no_turno == 2) {
-    if (resta < 28) { //Para cuando es menos de un mes
+    if (resta < 28) {
+      //Para cuando es menos de un mes
       for (let numeroDeDias = 0; numeroDeDias < resta; numeroDeDias++) {
         turnoNoche(numeroDeDias);
       }
@@ -663,20 +707,20 @@ function hello(
       for (let index = 0; index < auxMes; index++) {
         let auxMesCompleto = aux28 * index,
           auxTurno = arrayTurnoNoche[index],
-          auxforDias = 28
+          auxforDias = 28;
         if (index == mesesDiferencia) {
-          auxforDias = numeroDiasSobrantes + 1
+          auxforDias = numeroDiasSobrantes + 1;
         }
         for (let numeroDeDias = 0; numeroDeDias < auxforDias; numeroDeDias++) {
           auxTurno(numeroDeDias, auxMesCompleto);
         }
-        
       }
     }
   }
 
   if (no_turno == 3) {
-    if (resta < 28) { //Para cuando es menos de un mes
+    if (resta < 28) {
+      //Para cuando es menos de un mes
       for (let numeroDeDias = 0; numeroDeDias < resta; numeroDeDias++) {
         turnoMixto(numeroDeDias);
       }
@@ -684,19 +728,22 @@ function hello(
       for (let index = 0; index < auxMes; index++) {
         let auxMesCompleto = aux28 * index,
           auxTurno = arrayTurnoMixto[index],
-          auxforDias = 28
+          auxforDias = 28;
         if (index == mesesDiferencia) {
-          auxforDias = numeroDiasSobrantes + 1
+          auxforDias = numeroDiasSobrantes + 1;
         }
         for (let numeroDeDias = 0; numeroDeDias < auxforDias; numeroDeDias++) {
           auxTurno(numeroDeDias, auxMesCompleto);
         }
-        
       }
     }
   }
 
-  console.log(diasDeTrabajo);
+  console.log(
+    "mañana= " + diasDeTrabajoManana,
+    "noche= " + diasDeTrabajoNoche,
+    "mixto= " + diasDeTrabajoMixto
+  );
 
   if (ano_final < ano_inicio) {
     diaanterio();
@@ -779,4 +826,169 @@ function hello(
       }
     }
   }
+
+  /************************* PINTAR CALENDARIO **********************************/
+
+  let monthNames = [
+    "Enero",
+    "Febrero",
+    "Marzo",
+    "Abril",
+    "Mayo",
+    "Junio",
+    "Julio",
+    "Agosto",
+    "Septiembre",
+    "Octubre",
+    "Noviembre",
+    "Diciembre",
+  ];
+
+  let currentDate = new Date();
+  let currentDay = currentDate.getDate();
+  let monthNumber = mes_inicio - 1;
+  let currentYear = ano_inicio;
+
+  let dates = document.getElementById("dates"),
+    month = document.getElementById("month"),
+    year = document.getElementById("year");
+
+  let prevMonthDOM = document.getElementById("prev-month"),
+    nextMonthDOM = document.getElementById("next-month");
+
+  month.textContent = monthNames[monthNumber];
+  year.textContent = currentYear.toString();
+
+  prevMonthDOM.addEventListener("click", () => lastMonth());
+  nextMonthDOM.addEventListener("click", () => nextMonth());
+
+  const writeMonth = (month) => {
+    let auxNumber = 1;
+
+    switch (month) {
+      case 1:
+        auxNumber = 32;
+        break;
+      case 2:
+        auxNumber = 60;
+        break;
+      case 3:
+        auxNumber = 91;
+        break;
+      case 4:
+        auxNumber = 121;
+        break;
+      case 5:
+        auxNumber = 152;
+        break;
+      case 6:
+        auxNumber = 182;
+        break;
+      case 7:
+        auxNumber = 213;
+        break;
+      case 8:
+        auxNumber = 244;
+        break;
+      case 9:
+        auxNumber = 274;
+        break;
+      case 10:
+        auxNumber = 305;
+        break;
+      case 11:
+        auxNumber = 365;
+        break;
+      default:
+        break;
+    }
+
+    for (let i = startDay(); i > 0; i--) {
+      dates.innerHTML += ` <div class="calendar__date calendar__item calendar__last-days">
+            ${getTotalDays(monthNumber - 1) - (i - 1)}
+        </div>`;
+    }
+
+    for (let i = 1; i <= getTotalDays(month); i++) {
+      let auxContador = auxNumber++;
+
+      if (diasDeTrabajoManana.includes(auxContador)) {
+        dates.innerHTML += ` <div class="calendar__date calendar__item calendar__manana">${i}</div>`;
+      } else {
+        if (diasDeTrabajoNoche.includes(auxContador)) {
+          dates.innerHTML += ` <div class="calendar__date calendar__item calendar__noche">${i}</div>`;
+        } else {
+          if (diasDeTrabajoMixto.includes(auxContador)) {
+            dates.innerHTML += ` <div class="calendar__date calendar__item calendar__mixto">${i}</div>`;
+          } else {
+            dates.innerHTML += ` <div class="calendar__date calendar__item">${i}</div>`;
+          }
+        }
+      }
+    }
+  };
+
+  const getTotalDays = (month) => {
+    if (month === -1) month = 11;
+
+    if (
+      month == 0 ||
+      month == 2 ||
+      month == 4 ||
+      month == 6 ||
+      month == 7 ||
+      month == 9 ||
+      month == 11
+    ) {
+      return 31;
+    } else if (month == 3 || month == 5 || month == 8 || month == 10) {
+      return 30;
+    } else {
+      return isLeap() ? 29 : 28;
+    }
+  };
+
+  const isLeap = () => {
+    return (
+      (currentYear % 100 !== 0 && currentYear % 4 === 0) ||
+      currentYear % 400 === 0
+    );
+  };
+
+  const startDay = () => {
+    let start = new Date(currentYear, monthNumber, 1);
+    return start.getDay() - 1 === -1 ? 6 : start.getDay() - 1;
+  };
+
+  const lastMonth = () => {
+    if (monthNumber !== 0) {
+      monthNumber--;
+    } else {
+      monthNumber = 11;
+      currentYear--;
+    }
+
+    setNewDate();
+  };
+
+  const nextMonth = () => {
+    if (monthNumber !== 11) {
+      monthNumber++;
+    } else {
+      monthNumber = 0;
+      currentYear++;
+    }
+
+    setNewDate();
+  };
+
+  const setNewDate = () => {
+    currentDate.setFullYear(currentYear, monthNumber, currentDay);
+    month.textContent = monthNames[monthNumber];
+    year.textContent = currentYear.toString();
+    dates.textContent = "";
+    writeMonth(monthNumber);
+  };
+
+  writeMonth(monthNumber);
 }
