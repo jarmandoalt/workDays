@@ -3,6 +3,7 @@ import { si, no, mismoDia, diaAnterior, mas1ano } from "./errores.js";
 
 const $root = document.getElementById("root"),
     $btnInf = document.getElementById('inf'),
+    $btnmod = document.getElementById('mod'),
     $btnClose = document.getElementById('cerrar_pestaña')
 
 document.addEventListener("submit", (e) => {
@@ -14,7 +15,9 @@ document.addEventListener("submit", (e) => {
 $btnClose.addEventListener('click', (e) => {
   location.reload();
   $btnInf.classList.remove('is-active')
-} )
+});
+
+
 
 export function tomadatos() {
   let x = document.getElementById("inicio").value,
@@ -30,11 +33,16 @@ export function tomadatos() {
     aux1 = ano_inicio - 2020,
     aux2 = ano_final - 2020,
     lista_turno = document.getElementById("turno"),
-    no_turno = turno.value;
-
-  console.log(no_turno);
-
-  console.log(x);
+    no_turno = turno.value,
+    date = new Date(x.replace(/-+/g, '/')),
+    options = {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+    },
+    arrayNombreDia = date.toLocaleDateString('es-MX', options).split(','),
+    nombreDia = arrayNombreDia[0]
 
   hello(
     fecha_inicio,
@@ -47,7 +55,8 @@ export function tomadatos() {
     aux1,
     aux2,
     dia_inicio,
-    no_turno
+    no_turno,
+    nombreDia
   );
 }
 
@@ -62,12 +71,12 @@ function hello(
   aux1,
   aux2,
   dia_inicio,
-  no_turno
+  no_turno,
+  nombreDia
 ) {
   let $root = document.getElementById("root");
 
   function manana(otro) {
-    console.log("turno manana");
     const $h1 = document.getElementById("turno_select");
 
     $h1.innerHTML = "<h1> Estarás en el Turno Mañana </h1>";
@@ -393,7 +402,6 @@ function hello(
       }
     } else {
       if (turno == 1) {
-        console.log("mas de tres mandando  first");
         first(numeroDeDiasSobrantes);
       } else {
         if (turno == 2) {
@@ -405,7 +413,7 @@ function hello(
 
   let numero1 = asigdia1(aux1, dia_inicio, mes_inicio),
     numero2 = asigdia2(aux2, dia_final, mes_final);
-  if (no_turno == 2) {
+  if (no_turno == 2 && nombreDia == 'miércoles') {
     //se restan 2 das al turno de noche para que empiecce en lunes
     numero1 = numero1 - 2;
   }
@@ -501,14 +509,6 @@ function hello(
       turnoNoche,
       turnoMixto,
     ];
-
-  console.log(
-    "numero1= " + numero1,
-    "numero2= " + numero2,
-    "resta= " + resta,
-    "mesDiferencia= " + mesesDiferencia,
-    "numeroDias= " + numeroDiasSobrantes
-  );
 
   function turnoManana(numeroDeDia, diaDelMesAux) {
     let auxAnoDiferente = numero1 + numeroDeDia + diaDelMesAux;
@@ -744,12 +744,6 @@ function hello(
     }
   }
 
-  console.log(
-    "mañana= " + diasDeTrabajoManana,
-    "noche= " + diasDeTrabajoNoche,
-    "mixto= " + diasDeTrabajoMixto
-  );
-
   if (ano_final < ano_inicio) {
     diaAnterior();
   } else {
@@ -764,7 +758,6 @@ function hello(
           mismoDia();
         } else {
           //el mismmo año antes de un mes
-          //console.log("resta de los dias",resta);
           if (resta < 28) {
             if (no_turno == 1) {
               manana(resta);
@@ -835,18 +828,18 @@ function hello(
   /************************* PINTAR CALENDARIO **********************************/
 
   let monthNames = [
-    "Enero",
-    "Febrero",
-    "Marzo",
-    "Abril",
-    "Mayo",
-    "Junio",
-    "Julio",
-    "Agosto",
-    "Septiembre",
-    "Octubre",
-    "Noviembre",
-    "Diciembre",
+    "Ene",
+    "Feb",
+    "Mar",
+    "Abr",
+    "May",
+    "Jun",
+    "Jul",
+    "Ago",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dic",
   ];
 
   let currentDate = new Date();
@@ -966,7 +959,6 @@ function hello(
       return 30;
     } else {
       return isLeap() ? 29 : 28;
-      console.log("biciesto");
     }
   };
 

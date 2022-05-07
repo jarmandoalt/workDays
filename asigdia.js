@@ -21,14 +21,12 @@ export function asigdia1(aux1,dia_inicio,mes_inicio) {
 
 export function asigdia2(aux2,dia_final,mes_final) {
     let aux5 = aux2 % 4;
-    //console.log(aux5);
     if (aux5 === 0){
         
         return asigmes(dia_final,mes_final);
     }
     else {
         let aux3 = asigmes(dia_final,mes_final);
-        console.log("aux3",aux3);
         if (aux3 >= 60){
             
             let aux6 = aux3 - 1;
