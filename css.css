@@ -82,6 +82,7 @@
     width: 20vw;
     height: 5vh;
     font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-top: 3vh;
   }
   
   #ok:hover {
