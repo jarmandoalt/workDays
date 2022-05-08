@@ -479,6 +479,12 @@
 }
 
 .error {
+  position: absolute;
+  top: 7vh;
+  width: 40vw;
+  left: 30vw;
+  text-align: center;
+  color: rgb(221, 171, 96);
   font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
@@ -488,7 +494,7 @@
   width: 40vw;
   left: 30vw;
   text-align: center;
-  color: aliceblue;
+  color: rgb(70, 197, 159);
   font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
