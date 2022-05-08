@@ -2,22 +2,24 @@ import { asigdia1, asigdia2 } from "./asigdia.js";
 import { si, no, mismoDia, diaAnterior, mas1ano } from "./errores.js";
 
 const $root = document.getElementById("root"),
-    $btnInf = document.getElementById('inf'),
-    $btnmod = document.getElementById('mod'),
-    $btnClose = document.getElementById('cerrar_pestaña')
+  $btnInf = document.getElementById("inf"),
+  $btnmod = document.getElementById("mod"),
+  $btnClose = document.getElementById("cerrar_pestaña"),
+  $dates = document.getElementById("dates");
 
 document.addEventListener("submit", (e) => {
   e.preventDefault();
   tomadatos();
-  $btnInf.classList.add('is-active')
+  $btnInf.classList.add("is-active");
 });
 
-$btnClose.addEventListener('click', (e) => {
-  location.reload();
-  $btnInf.classList.remove('is-active')
+$btnClose.addEventListener("click", (e) => {
+  btnInf.classList.remove("is-active");
+  for (let index = 0; index < 74; index++) {
+    console.log('eliminado');
+    dates.removeChild(dates.firstChild);
+  }
 });
-
-
 
 export function tomadatos() {
   let x = document.getElementById("inicio").value,
@@ -34,15 +36,15 @@ export function tomadatos() {
     aux2 = ano_final - 2020,
     lista_turno = document.getElementById("turno"),
     no_turno = turno.value,
-    date = new Date(x.replace(/-+/g, '/')),
+    date = new Date(x.replace(/-+/g, "/")),
     options = {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
     },
-    arrayNombreDia = date.toLocaleDateString('es-MX', options).split(','),
-    nombreDia = arrayNombreDia[0]
+    arrayNombreDia = date.toLocaleDateString("es-MX", options).split(","),
+    nombreDia = arrayNombreDia[0];
 
   hello(
     fecha_inicio,
@@ -265,7 +267,6 @@ function hello(
   }
 
   function mixto(otro) {
-
     const $h1 = document.getElementById("turno_select");
     $h1.classList.add("turno_select");
 
@@ -413,7 +414,7 @@ function hello(
 
   let numero1 = asigdia1(aux1, dia_inicio, mes_inicio),
     numero2 = asigdia2(aux2, dia_final, mes_final);
-  if (no_turno == 2 && nombreDia == 'miércoles') {
+  if (no_turno == 2 && nombreDia == "miércoles") {
     //se restan 2 das al turno de noche para que empiecce en lunes
     numero1 = numero1 - 2;
   }
@@ -569,7 +570,7 @@ function hello(
 
   function turnoNoche(numeroDeDia, diaDelMesAux) {
     let auxAnoDiferente = numero1 + numeroDeDia + diaDelMesAux;
-    if ((numero1 + numeroDeDia + diaDelMesAux) > 365) {
+    if (numero1 + numeroDeDia + diaDelMesAux > 365) {
       auxAnoDiferente = auxAnoDiferente - 365;
     }
     switch (numeroDeDia) {
@@ -626,7 +627,7 @@ function hello(
 
   function turnoMixto(numeroDeDia, diaDelMesAux) {
     let auxAnoDiferente = numero1 + numeroDeDia + diaDelMesAux;
-    if ((numero1 + numeroDeDia + diaDelMesAux) > 365) {
+    if (numero1 + numeroDeDia + diaDelMesAux > 365) {
       auxAnoDiferente = auxAnoDiferente - 365;
     }
     switch (numeroDeDia) {
