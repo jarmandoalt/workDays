@@ -14,10 +14,9 @@ document.addEventListener("submit", (e) => {
 });
 
 $btnClose.addEventListener("click", (e) => {
-  btnInf.classList.remove("is-active");
+  $btnInf.classList.remove("is-active");
   for (let index = 0; index < 74; index++) {
-    console.log('eliminado');
-    dates.removeChild(dates.firstChild);
+    $dates.removeChild($dates.firstChild);
   }
 });
 
