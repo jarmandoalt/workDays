@@ -20,6 +20,8 @@ $btnClose.addEventListener("click", (e) => {
   }
 });
 
+
+
 export function tomadatos() {
   let x = document.getElementById("inicio").value,
     k = document.getElementById("final").value,
