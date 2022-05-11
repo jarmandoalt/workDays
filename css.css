@@ -56,7 +56,7 @@
   }
   
   .every > input:hover {
-    cursor: text;
+    cursor: pointer;
   }
   
   .every > select {
@@ -391,10 +391,11 @@
   width: 60vw;
   border-radius: 5px;
   background-color: rgb(236, 236, 236);
+  cursor: pointer;
 }
 
 .every > input:hover {
-  cursor: text;
+  cursor: pointer;
 }
 
 .every > select {
