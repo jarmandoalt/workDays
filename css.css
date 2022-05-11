@@ -184,7 +184,7 @@
     width: 90vw;
     margin: 1em auto;
     padding: 0.5em 0;
-    top: 25vh;
+    top: 22vh;
     left: 5vw;
     border-radius: 15px;
   }
@@ -331,7 +331,7 @@
     border-radius: 50%;
     margin-left: 1vw;
     margin-top: .2vh;
-    margin-right: 6vw;
+    margin-right: 4vw;
   }
   
   .circle_manana{
@@ -518,7 +518,7 @@
   width: 40vw;
   margin: 1em auto;
   padding: 0.5em 0;
-  top: 30vh;
+  top: 25vh;
   left: 30vw;
   border-radius: 15px;
 }
