@@ -162,7 +162,7 @@
     width: 70vw;
     left: 15vw;
     text-align: center;
-    color: aliceblue;
+    color: rgb(74, 148, 212);
     font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
   
@@ -307,7 +307,7 @@
   
   .inf_turnos {
     position: absolute;
-    top: 75vh;
+    top: 78vh;
     display: flex;
     width: 90vw;
     left: 8.5vw;
